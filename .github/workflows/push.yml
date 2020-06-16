@@ -1,0 +1,13 @@
+on: push
+name: docker
+jobs:
+    build:
+        strategy:
+            matrix:
+                os: ['windows-latest', 'ubuntu-latest']
+        runs-on: ${{ matrix.os }}
+        steps:
+            - uses: actions/checkout@v2
+            - name: build image
+              run: |
+                docker-compose build

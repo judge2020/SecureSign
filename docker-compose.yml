@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  webapp:
+    image: securesign
+    build: .
+    ports:
+        - 21212:80
+    volumes: 
+        - ".:/root"
